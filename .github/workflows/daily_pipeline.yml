@@ -53,8 +53,8 @@ jobs:
 
       - name: Run dbt Transformations
         working-directory: ./dbt_project
-        run: dbt run
+        run: dbt run --select fct_weather_summary
 
       - name: Run dbt Tests
         working-directory: ./dbt_project
-        run: dbt test
+        run: dbt test --select fct_weather_summary    

@@ -20,13 +20,8 @@ models:
           - unique
           - not_null
 
-
-version: 2
-
-models:
   - name: fct_weather_summary
     description: "Daily Halifax weather forecast summary"
-
     columns:
       - name: forecast_date
         data_tests:
@@ -40,3 +35,5 @@ models:
       - name: temp_min_c
         data_tests:
           - not_null
+
+
