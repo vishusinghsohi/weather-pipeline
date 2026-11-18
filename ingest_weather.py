@@ -3,6 +3,8 @@ import os
 from pathlib import Path
 import requests
 import dlt
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 # GCP credentials file location
 BASE_DIR = Path(__file__).resolve().parent
@@ -10,6 +12,7 @@ credentials_path = BASE_DIR / "gcp-credentials.json"
 
 if credentials_path.exists() and not os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"):
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str(credentials_path)
+
 
 @dlt.resource(
     table_name="raw_weather_daily",
@@ -34,11 +37,26 @@ def fetch_weather():
         "forecast_days": 7
     }
 
-    # Fetch weather data
-    response = requests.get(url, params=params, timeout=30)
-    response.raise_for_status()
+    # Retry temporary API failures automatically
+    retry_strategy = Retry(
+        total=3,
+        backoff_factor=2,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET"]
+    )
 
-    data = response.json()["daily"]
+    with requests.Session() as session:
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        session.mount("https://", adapter)
+
+        response = session.get(
+            url,
+            params=params,
+            timeout=(10, 60)
+        )
+
+        response.raise_for_status()
+        data = response.json()["daily"]
 
     # Convert JSON into daily records
     for i in range(len(data["time"])):
