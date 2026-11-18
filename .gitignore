@@ -1,0 +1,24 @@
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Google Cloud credentials
+gcp-credentials.json
+gha-creds-*.json
+*.pem
+
+# Environment variables and dlt local files
+.env
+.env.*
+.dlt/
+
+# dbt generated files
+dbt_project/target/
+dbt_project/logs/
+dbt_project/dbt_packages/
+
+# Local dbt connection profiles
+dbt_project/profiles.yml

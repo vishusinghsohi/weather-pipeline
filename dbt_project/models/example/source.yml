@@ -1,0 +1,14 @@
+
+version: 2
+
+sources:
+  - name: raw_weather
+    database: modern-data-portfolio
+    schema: raw_weather
+    tables:
+      - name: raw_weather_daily
+        columns:
+          - name: time
+            data_tests:
+              - unique
+              - not_null

@@ -1,0 +1,42 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+
+version: 2
+
+models:
+  - name: fct_weather_summary
+    description: "Daily Halifax weather forecast summary"
+
+    columns:
+      - name: forecast_date
+        data_tests:
+          - unique
+          - not_null
+
+      - name: temp_max_c
+        data_tests:
+          - not_null
+
+      - name: temp_min_c
+        data_tests:
+          - not_null

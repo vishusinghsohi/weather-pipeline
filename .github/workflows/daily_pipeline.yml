@@ -1,0 +1,60 @@
+
+name: Daily Weather Pipeline
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v3
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+          create_credentials_file: true
+          export_environment_variables: true
+
+      - name: Configure dbt
+        run: |
+          mkdir -p "$HOME/.dbt"
+          cat > "$HOME/.dbt/profiles.yml" <<'EOF'
+          dbt_project:
+            target: dev
+            outputs:
+              dev:
+                type: bigquery
+                method: service-account
+                project: modern-data-portfolio
+                dataset: weather_analytics
+                threads: 4
+                location: US
+                keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
+          EOF
+
+      - name: Run Weather Ingestion
+        run: python ingest_weather.py
+
+      - name: Run dbt Transformations
+        working-directory: ./dbt_project
+        run: dbt run
+
+      - name: Run dbt Tests
+        working-directory: ./dbt_project
+        run: dbt test

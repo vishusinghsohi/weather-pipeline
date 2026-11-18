@@ -1,0 +1,5 @@
+dlt[bigquery]
+dbt-bigquery
+requests
+python-dotenv
+google-cloud-bigquery-storage

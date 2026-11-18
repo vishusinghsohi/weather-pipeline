@@ -1,0 +1,94 @@
+[0m21:29:30.690411 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188F79BD100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188FAD34EF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188FAD371A0>]}
+
+
+============================== 21:29:30.694450 | 74ee6a95-4e6f-4695-a0aa-0dbf709b269a ==============================
+[0m21:29:30.694450 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m21:29:30.696469 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\vishu\\.dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init dbt_project', 'log_path': 'logs'}
+[0m21:29:30.696469 [debug] [MainThread]: Tracking: tracking
+[0m21:29:30.742076 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\vishu\.dbt
+[0m21:29:30.742076 [info ] [MainThread]: A project called dbt_project already exists here.
+[0m21:29:30.744099 [debug] [MainThread]: Command `dbt init` succeeded at 21:29:30.744099 after 0.26 seconds
+[0m21:29:30.744099 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188FC9ABEF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188FC943890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000188FC942780>]}
+[0m21:29:30.744099 [debug] [MainThread]: Flushing usage events
+[0m21:29:31.176530 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:34:42.057380 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E9BD7857F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E9C03F4AA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E9C0967680>]}
+
+
+============================== 21:34:42.057380 | e2fda983-d88b-4dd2-883b-fccabb14726b ==============================
+[0m21:34:42.057380 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m21:34:42.057380 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\vishu\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt init dbt_project', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m21:34:42.057380 [debug] [MainThread]: Tracking: tracking
+[0m21:34:42.102222 [debug] [MainThread]: Starter project path: C:\Users\vishu\weather-pipeline\venv\Lib\site-packages\dbt\include\starter_project
+[0m21:34:42.140529 [info ] [MainThread]: Setting up your profile.
+[0m21:41:53.654553 [info ] [MainThread]: Profile dbt_project written to C:\Users\vishu\.dbt\profiles.yml using target's profile_template.yml and your supplied values.
+[0m21:41:53.679067 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m21:41:53.679067 [info ] [MainThread]: dbt version: 1.13.0-b1
+[0m21:41:53.683729 [info ] [MainThread]: python version: 3.12.10
+[0m21:41:53.684236 [info ] [MainThread]: python path: C:\Users\vishu\weather-pipeline\venv\Scripts\python.exe
+[0m21:41:53.684236 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m21:41:53.841259 [info ] [MainThread]: Using profiles dir at C:\Users\vishu\.dbt
+[0m21:41:53.841259 [info ] [MainThread]: Using profiles.yml file at C:\Users\vishu\.dbt\profiles.yml
+[0m21:41:53.841259 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\vishu\weather-pipeline\dbt_project\dbt_project.yml
+[0m21:41:53.841259 [info ] [MainThread]: adapter type: bigquery
+[0m21:41:53.841259 [info ] [MainThread]: adapter version: 1.12.4
+[0m21:41:53.978963 [info ] [MainThread]: Configuration:
+[0m21:41:53.978963 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m21:41:53.979964 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m21:41:53.979964 [info ] [MainThread]: Required dependencies:
+[0m21:41:53.979964 [debug] [MainThread]: Executing "git --help"
+[0m21:41:54.673897 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:41:54.674814 [debug] [MainThread]: STDERR: "b''"
+[0m21:41:54.674814 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:41:54.674814 [info ] [MainThread]: Connection:
+[0m21:41:54.676743 [info ] [MainThread]:   method: service-account
+[0m21:41:54.676743 [info ] [MainThread]:   database: modern-data-portfolio
+[0m21:41:54.676743 [info ] [MainThread]:   execution_project: modern-data-portfolio
+[0m21:41:54.678755 [info ] [MainThread]:   schema: weather_analytics
+[0m21:41:54.678755 [info ] [MainThread]:   location: US
+[0m21:41:54.678755 [info ] [MainThread]:   priority: interactive
+[0m21:41:54.678755 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m21:41:54.678755 [info ] [MainThread]:   reservation: None
+[0m21:41:54.682597 [info ] [MainThread]:   impersonate_service_account: None
+[0m21:41:54.683607 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m21:41:54.684608 [info ] [MainThread]:   job_retries: 1
+[0m21:41:54.684608 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m21:41:54.685615 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m21:41:54.686607 [info ] [MainThread]:   job_link_info_level_log: False
+[0m21:41:54.687191 [info ] [MainThread]:   timeout_seconds: 300
+[0m21:41:54.687191 [info ] [MainThread]:   client_id: None
+[0m21:41:54.689205 [info ] [MainThread]:   token_uri: None
+[0m21:41:54.689746 [info ] [MainThread]:   compute_region: None
+[0m21:41:54.689746 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m21:41:54.690754 [info ] [MainThread]:   gcs_bucket: None
+[0m21:41:54.690754 [info ] [MainThread]:   dataproc_batch: None
+[0m21:41:54.692485 [info ] [MainThread]: Registered adapter: bigquery=1.12.4
+[0m21:41:55.216137 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m21:41:55.216137 [debug] [MainThread]: On debug: select 1 as id
+[0m21:41:55.216137 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:41:56.670716 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=modern-data-portfolio&j=bq:US:bc90fc64-dbb2-4d2b-8af8-c7ad8d687628&page=queryresults
+[0m21:41:56.930807 [debug] [MainThread]: SQL status: OK in 0.265 seconds
+[0m21:42:01.195802 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m21:42:01.196803 [info ] [MainThread]: [32mAll checks passed![0m
+[0m21:42:01.196803 [info ] [MainThread]: Your new dbt project "dbt_project" was created!
+Initialized new project in C:\Users\vishu\weather-pipeline\dbt_project\dbt_project
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m21:42:01.199840 [debug] [MainThread]: Command `dbt init` succeeded at 21:42:01.198819 after 439.39 seconds
+[0m21:42:01.199840 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m21:42:01.200846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E9C27EBEF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E9C0B0D760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E9C24A8860>]}
+[0m21:42:01.200846 [debug] [MainThread]: Flushing usage events
+[0m21:42:01.835468 [debug] [MainThread]: An error was encountered while trying to flush usage events
